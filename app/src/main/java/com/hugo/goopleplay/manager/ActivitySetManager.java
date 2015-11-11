@@ -3,12 +3,12 @@ package com.hugo.goopleplay.manager;
 import android.app.Activity;
 import android.content.Context;
 
-import com.hugo.goopleplay.utils.LogUtils;
-
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import utils.LogUtils;
 
 /**
  * Created by hq on 2015/10/29.

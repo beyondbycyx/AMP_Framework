@@ -1,4 +1,4 @@
-package com.hugo.goopleplay.utils;
+package utils;
 
 import java.io.Closeable;
 import java.io.IOException;

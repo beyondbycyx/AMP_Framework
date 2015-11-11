@@ -4,8 +4,9 @@ import android.app.Application;
 
 import com.hugo.goopleplay.exception.CrashHandler;
 import com.hugo.goopleplay.manager.ActivitySetManager;
-import com.hugo.goopleplay.utils.DpUtils;
-import com.hugo.goopleplay.utils.LogUtils;
+
+import utils.DpUtils;
+import utils.LogUtils;
 
 /**
  * Created by hq on 2015/11/10.

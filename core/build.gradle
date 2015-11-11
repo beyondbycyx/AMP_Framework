@@ -1,11 +1,10 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.hugo.goopleplay"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
@@ -20,10 +19,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
-    compile files('libs/butterknife-7.0.1.jar')
-
-    compile project(':api')
 }

@@ -1,4 +1,4 @@
-package com.hugo.goopleplay.utils;
+package utils;
 
 import android.content.Context;
 

@@ -1,9 +1,9 @@
-package com.hugo.goopleplay.utils;
+package utils;
 
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.hugo.goopleplay.bean.Constants;
+import com.hugo.model.Constants;
 
 import java.util.List;
 
@@ -178,7 +178,8 @@ public class LogUtils {
 
 	public static void log2File(String log, String path, boolean append) {
 		synchronized (mLogLock) {
-			FileUtils.writeFile(log + "\r\n", path, append);
+			//TODO
+	//		FileUtils.writeFile(log + "\r\n", path, append);
 		}
 	}
 
