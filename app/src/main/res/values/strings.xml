@@ -1,6 +1,25 @@
 <resources>
-    <string name="app_name">GooplePlay</string>
+    <string name="app_name">NewsApp</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="tab_home">home</string>
+    <string name="tab_news">news</string>
+    <string name="tab_affair">affair</string>
+    <string name="tab_setting">setting</string>
+    <string name="content_drawer_desc">drawer_desc_info</string>
+    <string name="content_drawer_colse">content_drawer_close</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="empty">empty</string>
+    <string name="img_icon" >imgCon</string>
+    <string name="home_icon">homeIcon</string>
+
+    <!-- MainVu -->
+    <string name="login_info">请输入登录帐号</string>
+
+
 </resources>

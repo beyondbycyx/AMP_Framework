@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 头部的actionbar 主题 -->
+    <color name="green_primary" >#009999</color>
+    <color name="green_secondary" >#008585</color>
+    <color name="white" >#ffffff</color>
+    <color name="black" >#000000</color>
+    <color name="green_light" >#7eba75</color>
+    <color name="red" >#FFBA7071</color>
+    <color name="gray" >#FFB4B6A8</color>
+
+    <!-- actionbar颜色-->
+    <color name="blue_primary">#FF0790DE</color>
+    <color name="blue_secondary">#FF07A9FF</color>
+</resources>

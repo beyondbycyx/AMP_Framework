@@ -90,8 +90,6 @@ public abstract class BaseFragment extends Fragment {
 
     public interface OnCallActivity {
 
-        void setTitleText(String text);
-//        RequestHelper getRequestHelper();
     }
 
 

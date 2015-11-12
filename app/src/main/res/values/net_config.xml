@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- 网络请求的配置信息 -->
+    <string name="web_host">http://10.0.3.2</string>
+    <string name="update_uri">/WebProject/Server.json</string>
+    <string name="update_url">http://10.0.3.2/WebProject/Server.json</string>
+</resources>

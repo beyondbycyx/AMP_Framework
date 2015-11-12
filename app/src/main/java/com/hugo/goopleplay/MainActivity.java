@@ -1,14 +1,22 @@
 package com.hugo.goopleplay;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import com.hugo.goopleplay.base.BaseActivity;
+import com.hugo.goopleplay.views.MainVu;
+
+public class MainActivity extends BaseActivity<MainVu> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
     }
+
+    @Override
+    public Class<MainVu> getVuClass() {
+        return MainVu.class;
+    }
+
 
 }
