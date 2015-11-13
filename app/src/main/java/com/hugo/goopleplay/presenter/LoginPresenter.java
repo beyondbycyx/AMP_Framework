@@ -2,7 +2,6 @@ package com.hugo.goopleplay.presenter;
 
 import android.content.Context;
 import android.view.View;
-import com.hugo.api.ILoginView;
 import com.hugo.goopleplay.R;
 import com.hugo.goopleplay.base.BasePresenter;
 import com.hugo.goopleplay.manager.EventHelper;

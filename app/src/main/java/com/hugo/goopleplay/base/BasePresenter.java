@@ -1,8 +1,5 @@
 package com.hugo.goopleplay.base;
 
-import com.hugo.api.IPresenter;
-import com.hugo.api.Vu;
-
 /**
  * Created by hq on 2015/11/12.
  */

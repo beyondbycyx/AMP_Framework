@@ -3,7 +3,6 @@ package com.hugo.goopleplay.activity;
 import android.os.Bundle;
 import android.view.View;
 import butterknife.OnClick;
-import com.hugo.api.ILoginView;
 import com.hugo.goopleplay.R;
 import com.hugo.goopleplay.base.BaseActivity;
 import com.hugo.goopleplay.presenter.LoginPresenter;

@@ -1,9 +1,11 @@
 package com.hugo.api;
 
+import com.hugo.api.*;
+
 /**
  * Created by hq on 2015/11/12.
  */
-public interface IPageView extends Vu {
+public interface IPageView extends com.hugo.api.Vu {
 
     /**
      * 显示等待页面

@@ -1,6 +1,7 @@
 package com.hugo.api;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.view.View;
 
@@ -17,5 +18,7 @@ public interface Vu {
      * @param id  获取View 的id
      * @return   在rootview 中的子View
      */
-    View getViewById( @IdRes int id);
+    View getViewById(@IdRes int id);
+
+    void rollbackView(Bundle lastState);
 }
