@@ -1,5 +1,6 @@
 package com.hugo.goopleplay.base;
 
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -38,7 +39,7 @@ public abstract class BaseFragment extends Fragment {
 
 
     protected View bindView(@LayoutRes int layoutRes) {
-        View view = LayoutInflater.from(getContext()).inflate(layoutRes, null);
+        View view = LayoutInflater.from(getActivity()).inflate(layoutRes, null);
         ButterKnife.bind(this, view);
         return  view;
     }

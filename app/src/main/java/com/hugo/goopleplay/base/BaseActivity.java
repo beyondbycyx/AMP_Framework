@@ -1,56 +1,75 @@
 package com.hugo.goopleplay.base;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
+import android.util.SparseArray;
+import android.view.LayoutInflater;
 import android.view.View;
-
-import com.hugo.goopleplay.manager.ActivitySetManager;
-
 import butterknife.ButterKnife;
-import utils.LogUtils;
-import vus.Vu;
+import com.hugo.api.Vu;
+import com.hugo.goopleplay.manager.ActivitySetManager;
 
 /**
  * Created by hq on 2015/10/27.
  */
-public abstract class BaseActivity<V extends Vu> extends AppCompatActivity   {
+public   class BaseActivity<P extends BasePresenter> extends AppCompatActivity
+    implements Vu {
 
-    private static  final  String TAG = "BaseActivity";
+  private static final String TAG = "BaseActivity";
 
-   @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-       try {
-           ActivitySetManager.getInstance().addActivity(this);
+  private SparseArray<View> mViewSet;
+  private View mView;
 
-           Vu vu = getVuClass().newInstance();
-           View view = vu.getView();
-           setContentView(view);
-           ButterKnife.bind(this);
+  @Override
 
-       } catch (Exception e) {
-           LogUtils.d(TAG,e.getMessage());
-       }
-   }
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    init();
+  }
 
+  private void init() {
+    ActivitySetManager.getInstance().addActivity(this);
+    mViewSet = new SparseArray<View>();
+  }
 
-    /**
-     *
-     * @return Vu sub class
-     * the subclass must implement the method to provider a Vu class for the base class used
-     */
-    public abstract Class<V>  getVuClass();
-    @Override
-    protected void onStop() {
-        super.onStop();
+  /**
+   * 子类必须继承并使用它初始化
+   */
+  protected void bindView(@LayoutRes int layoutId) {
+    mView = LayoutInflater.from(this).inflate(layoutId, null);
+    setContentView(mView);
+    ButterKnife.bind(this);
+  }
 
+  /**
+   * @return Vu sub class
+   * the subclass must implement the method to provider a Vu class for the base class used
+   */
+
+  @Override protected void onStop() {
+    super.onStop();
+  }
+
+  @Override protected void onDestroy() {
+    super.onDestroy();
+    ActivitySetManager.getInstance().removeActivity(this);
+  }
+
+  @Override public Context getContext() {
+    return this;
+  }
+
+  @Override public View getViewById(@IdRes int id) {
+    View view = mViewSet.get(id);
+    if (view == null) {
+      view = mView.findViewById(id);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-         ActivitySetManager.getInstance().removeActivity(this);
+    return view;
+  }
 
-    }
 
 }

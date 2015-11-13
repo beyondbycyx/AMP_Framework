@@ -1,12 +1,12 @@
 package com.hugo.goopleplay;
 
 import android.app.Application;
-
+import com.hugo.common.utils.DpUtils;
+import com.hugo.common.utils.LogUtils;
 import com.hugo.goopleplay.exception.CrashHandler;
 import com.hugo.goopleplay.manager.ActivitySetManager;
 
-import utils.DpUtils;
-import utils.LogUtils;
+
 
 /**
  * Created by hq on 2015/11/10.
@@ -17,9 +17,6 @@ public final class App extends Application {
     private static final String TAG = "GooglePlayApp";
     private static App instance;
 
-    private App() {
-
-    }
 
     @Override
     public void onCreate() {

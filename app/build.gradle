@@ -21,8 +21,11 @@ android {
 }
 
 dependencies {
+    compile project(':domain')
+    compile project(':api')
+    compile project(':common')
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
-    compile files('libs/butterknife-7.0.1.jar')
+    compile 'com.android.support:design:22.2.1'
 }

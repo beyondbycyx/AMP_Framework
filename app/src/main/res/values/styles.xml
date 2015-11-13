@@ -25,7 +25,6 @@
     </style>
 
 
-
     <style name="ProgressBar_Circle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -35,7 +34,17 @@
 
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="login_et">
+        <item name="android:layout_width" >fill_parent</item>
+        <item name="android:layout_height" >wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/font_larger</item>
+        <item name="android:textColor">@color/blue_secondary</item>
+    </style>
 
 
 </resources>

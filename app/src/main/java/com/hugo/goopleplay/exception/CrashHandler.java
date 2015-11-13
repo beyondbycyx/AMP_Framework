@@ -4,9 +4,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-
+import com.hugo.common.utils.LogUtils;
 import com.hugo.goopleplay.App;
-import com.hugo.goopleplay.utils.LogUtils;
 
 /**
  * Created by hq on 2015/11/10.
@@ -48,7 +47,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     @Override
     public void uncaughtException(Thread thread, Throwable ex) {
     //打印异常，最好打印到日志文件中
-        LogUtils.e(TAG,ex.getMessage());
+        LogUtils.e(TAG, ex.getMessage());
     //提示用户出现异常
         new Thread(){
             @Override

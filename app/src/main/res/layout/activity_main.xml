@@ -13,13 +13,11 @@
         android:id="@+id/et_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        style="@style/"
+        style="@style/AppTheme"
         android:hint="@string/login_info"
         android:singleLine="true" />
     <EditText
         android:id="@+id/et_pwd"
-
-
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:singleLine="true"
