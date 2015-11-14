@@ -1,5 +1,8 @@
 package com.hugo.goopleplay.base;
 
+import com.hugo.api.IPresenter;
+import com.hugo.api.Vu;
+
 /**
  * Created by hq on 2015/11/12.
  */
@@ -11,11 +14,11 @@ public abstract class BasePresenter<V extends Vu> implements IPresenter {
     mViewImpl = vImpl;
   }
 
-  @Override public void execute() {
-    throw new IllegalStateException("execute method must be override be before to used");
+  @Override public void start() {
+    throw new IllegalStateException("executeRequest method must be override be before to used");
   }
 
-  @Override public void cancel() {
-    throw new IllegalStateException("cancel method must be override be before to used");
+  @Override public void stop() {
+    throw new IllegalStateException("removeRequest method must be override be before to used");
   }
 }

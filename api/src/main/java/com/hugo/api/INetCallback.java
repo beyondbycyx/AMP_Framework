@@ -5,7 +5,8 @@ package com.hugo.api;
  */
 public interface INetCallback<T,K> {
 
-  void onSuccess(T result, K Response);
+  void onSuccess(T result, K response);
 
+  void onEmpty(K response);
   void onError(Exception error);
 }

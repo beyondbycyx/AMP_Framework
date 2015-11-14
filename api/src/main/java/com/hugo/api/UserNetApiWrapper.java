@@ -1,5 +1,6 @@
 package com.hugo.api;
 
+import com.hugo.api.entites.UserResponse;
 import com.hugo.api.net.UserNetApi;
 import com.hugo.common.utils.EncryptUtil;
 
@@ -16,10 +17,12 @@ public class UserNetApiWrapper {
   UserResponse login(String userName,String password) {
     String encryptPwd = EncryptUtil.makeMD5(password);
 
+    return null;
   }
 
   UserResponse register() {
 
+    return null;
   }
 
 }

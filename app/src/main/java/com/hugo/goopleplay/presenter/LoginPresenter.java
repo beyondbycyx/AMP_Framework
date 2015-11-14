@@ -2,6 +2,8 @@ package com.hugo.goopleplay.presenter;
 
 import android.content.Context;
 import android.view.View;
+import com.hugo.api.ILoginView;
+import com.hugo.api.Vu;
 import com.hugo.goopleplay.R;
 import com.hugo.goopleplay.base.BasePresenter;
 import com.hugo.goopleplay.manager.EventHelper;
@@ -16,7 +18,10 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
   }
 
   //先显示loading 界面几秒，再显示登录界面
-  @Override public void execute() {
+  @Override public void start() {
+
+    //TODO 每次进来，需要状态回显。
+
     final View loadingView = mViewImpl.getViewById(R.id.loading_view);
     final View loginView = mViewImpl.getViewById(R.id.login_view);
     loginView.setVisibility(View.GONE);
@@ -35,7 +40,11 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
 
   }
 
-  @Override public void cancel() {
+  @Override public void stop() {
 
+  }
+
+  @Override public boolean attachView(Vu viewImpl) {
+    return false;
   }
 }

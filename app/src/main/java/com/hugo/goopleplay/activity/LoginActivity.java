@@ -3,11 +3,12 @@ package com.hugo.goopleplay.activity;
 import android.os.Bundle;
 import android.view.View;
 import butterknife.OnClick;
+import com.hugo.api.ILoginView;
 import com.hugo.goopleplay.R;
 import com.hugo.goopleplay.base.BaseActivity;
 import com.hugo.goopleplay.presenter.LoginPresenter;
 
-public class LoginActivity extends BaseActivity<LoginPresenter> implements ILoginView  {
+public class LoginActivity extends BaseActivity<LoginPresenter> implements ILoginView {
 
   public static final String TAG = "LoginActivity";
 
@@ -31,7 +32,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
   public void init() {
     bindView(R.layout.activity_login);
     loginPresenter = new LoginPresenter(this);
-    loginPresenter.execute();
+    loginPresenter.start();
   }
 
 
@@ -46,4 +47,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
   @Override public void navigateToHome() {
 
   }
+
+
 }

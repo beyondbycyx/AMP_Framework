@@ -15,4 +15,11 @@ public class IOUtils {
 		}
 		return true;
 	}
+
+	public static boolean close(Closeable ... ios) {
+		for(Closeable io : ios){
+			close(io);
+		}
+		return true;
+	}
 }

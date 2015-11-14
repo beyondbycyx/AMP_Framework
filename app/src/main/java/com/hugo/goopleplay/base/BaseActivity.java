@@ -9,6 +9,7 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import butterknife.ButterKnife;
+import com.hugo.api.Vu;
 import com.hugo.goopleplay.manager.ActivitySetManager;
 
 /**
@@ -70,5 +71,7 @@ public   class BaseActivity<P extends BasePresenter> extends AppCompatActivity
     return view;
   }
 
+  @Override public void rollbackView(Bundle lastState) {
 
+  }
 }
