@@ -19,8 +19,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     public void test() {
         PackageManager packageManager = getContext().getPackageManager();
         PermissionInfo info = new PermissionInfo();
-        info.
-        packageManager.addPermission(info);
+
         HttpURLConnection httpUrl = null;
         try {
             URL url = new URL("http://10.0.3.2/myfile.txt");
@@ -44,7 +43,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     }
 /*
     public void test() {
-        NetRequestQueue netRequestQueue = NetRequestQueue.getInstance();
+        NetRequestQueue netRequestQueue = NetRequestQueue.getInstanceWithStart();
         netRequestQueue.start();
         Request request = new Request("http://127.0.0.1/myfile.txt","tag");
         NetCallback callback = new NetCallback() {

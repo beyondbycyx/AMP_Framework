@@ -27,7 +27,7 @@ public class ExampleUnitTest {
     @Test
     public void testNet() {
 
-        NetRequestQueue netRequestQueue = NetRequestQueue.getInstance();
+        NetRequestQueue netRequestQueue = NetRequestQueue.getInstanceWithStart();
         netRequestQueue.start();
         Request request = new Request("http://127.0.0.1/myfile.txt","tag");
         NetCallback callback = new NetCallback() {

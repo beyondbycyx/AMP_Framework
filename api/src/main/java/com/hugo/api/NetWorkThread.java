@@ -1,5 +1,6 @@
 package com.hugo.api;
 
+import android.os.SystemClock;
 import com.hugo.api.entites.Request;
 import com.hugo.api.entites.Response;
 import com.hugo.common.utils.IOUtils;
@@ -29,6 +30,8 @@ public class NetWorkThread extends Thread {
   public NetWorkThread(BlockingQueue<Request> blockingQueue, NetCallbackHelper netCallbackHelper) {
     this.blockingQueue = blockingQueue;
     this.netCallbackHelper = netCallbackHelper;
+    this.setPriority(10);
+
   }
 
   public void quit() {
@@ -44,10 +47,11 @@ public class NetWorkThread extends Thread {
   @Override public void run() {
     super.run();
     LogUtils.d(TAG,Thread.currentThread().getName()+"启动线程。。。");
+    resetState();
     while (true) {
 
-      resetState();
-      //循环获取request,有可能直接跳出循环，并返回
+
+      //循环获取request,直到获取到request才跳出循环,只有这样循环获取，才会保证，“开始网络请求”执行之前 request 不为null.
       Request request = null;
       while (true) {
         try {
@@ -60,7 +64,10 @@ public class NetWorkThread extends Thread {
         }
       }
 
-      //开始网络请求
+      //执行慢点
+      SystemClock.sleep(300);
+
+      //开始网络请求，前面的循环获取已经保证request 不为null了。
       HttpURLConnection httpURLConnection = null;
       Response response = null;
       try {
@@ -78,8 +85,8 @@ public class NetWorkThread extends Thread {
         //处理最后的结果
         if (response != null) {
           response.setUniqueId(request.getUniqueId()); //传递唯一标识给它，让他找这个标识号
-         // netCallbackHelper.postResponse(response);
-          NetRequestQueue.getInstance().testMap.put(response.getUniqueId(), response);
+          response.postOnThread = Thread.currentThread().getName();
+          netCallbackHelper.postResponse(response);
 
         }
       }
