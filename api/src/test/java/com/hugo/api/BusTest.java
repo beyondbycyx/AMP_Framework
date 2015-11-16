@@ -2,7 +2,7 @@ package com.hugo.api;
 
 import com.hugo.api.bus.Bus;
 import com.hugo.api.bus.BusBean;
-import java.util.Map;
+import com.hugo.api.bus.BusReceiver;
 import junit.framework.Assert;
 import org.junit.Test;
 
@@ -14,6 +14,17 @@ public class BusTest {
   public void register() {
 
     Bus bus = new Bus();
+    BusBean bean = new BusBean(bus);
+    BusReceiver receiver = new BusReceiver(bus);
+
+    Assert.assertNull(bean.str);
+    receiver.post("str");
+
+    Assert.assertEquals("str",bean.str);
+  }
+
+/*  public void testMap() {
+    Bus bus = new Bus();
     BusBean bean = new BusBean();
     bus.register(bean);
     Map handlerByType = bus.handlerByType;
@@ -22,7 +33,7 @@ public class BusTest {
     bus.unregister(bean);
     Map handlerByType1 = bus.handlerByType;
     Map registerWithType1 = bus.registerWithType;
-    Assert.assertEquals(0,handlerByType1.size());
+    Assert.assertEquals(0, handlerByType1.size());
 
-  }
+  }*/
 }

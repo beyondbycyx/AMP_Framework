@@ -13,12 +13,13 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
     final NetRequestQueue instance = NetRequestQueue.getInstanceWithStart();
 
-    Thread t = null;
+
 
 
   }
 
   public void create(Thread t) {
+
 
   }
 }

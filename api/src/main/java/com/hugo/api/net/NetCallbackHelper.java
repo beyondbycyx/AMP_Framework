@@ -58,7 +58,7 @@ public class NetCallbackHelper {
      * @param callback
      * @return
      */
-    private Delivery execute(NetCallback callback) {
+    private Delivery execute(NetCallback callback) { //builder 模式，增加该对象的新成员
       this.responseCallback = callback;
       return this;
     }
