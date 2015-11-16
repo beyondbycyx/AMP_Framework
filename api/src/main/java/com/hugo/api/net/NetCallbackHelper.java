@@ -1,4 +1,4 @@
-package com.hugo.api;
+package com.hugo.api.net;
 
 import android.os.Handler;
 import com.hugo.api.entites.Response;
@@ -29,12 +29,19 @@ public class NetCallbackHelper {
    */
   static  class  Delivery implements Runnable {
 
-    private Response response ;
-    private NetCallback responseCallback;
+    private Response response ; //从构造方法传入。
+    private NetCallback responseCallback; //从静态方法闯入
 
     public Delivery(Response response) {
       this.response = response;
     }
+    /**
+     * Delivery 类总结：
+     * 1.是一个小的容器：成员变量保存了某个方法内部需要的变量。
+     * 2.重写run方法：加入一段执行的代码块(最后作为runnable交给了handler进行post请求)
+     * 3.一个类可以柔和多个方法，并临时保存携带方法需要用到的变量。
+     * 4.一个类的内部的成员变量的赋值，可以在a.构造方法中传入(某个时段)，b.静态/非静态方法(某个时段)，c.总之就是方法名(Xxx 参数)，丢进来。
+   * */
 
     /**
      * 静态方法工厂模式

@@ -2,7 +2,7 @@ package com.hugo.goopleplay;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import com.hugo.api.NetRequestQueue;
+import com.hugo.api.net.NetRequestQueue;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,7 +13,12 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
     final NetRequestQueue instance = NetRequestQueue.getInstanceWithStart();
 
+    Thread t = null;
 
+
+  }
+
+  public void create(Thread t) {
 
   }
 }

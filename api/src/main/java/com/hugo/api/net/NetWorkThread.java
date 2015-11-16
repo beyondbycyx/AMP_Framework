@@ -1,4 +1,4 @@
-package com.hugo.api;
+package com.hugo.api.net;
 
 import android.os.SystemClock;
 import com.hugo.api.entites.Request;

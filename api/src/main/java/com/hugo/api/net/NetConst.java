@@ -1,4 +1,4 @@
-package com.hugo.api;
+package com.hugo.api.net;
 
 /**
  * Created by hq on 2015/11/13.

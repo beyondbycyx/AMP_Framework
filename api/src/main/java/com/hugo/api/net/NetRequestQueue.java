@@ -1,4 +1,4 @@
-package com.hugo.api;
+package com.hugo.api.net;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -33,7 +33,7 @@ public class NetRequestQueue {
   private Handler handler ;
   private static NetRequestQueue instance ;
 
-  private boolean isRun  = false;
+  private static boolean isRun  = false;
 
   private NetRequestQueue() {
     this(4);
@@ -59,7 +59,10 @@ public class NetRequestQueue {
         }
       }
     }
-    instance.start();
+    if (!isRun) {
+      instance.start();
+    }
+
     return instance;
   }
 
