@@ -16,6 +16,7 @@
 **正题：**  
 1. 清除Activity/fragment的冗余代码：
  网上的MVP模式，都是在想分离出一个层次来处理代码，更加重要的是视图由一个Activit与一个View取对应，不希望出现一个Activity与多个View绑定的关系。
+
 2. 寻找View的层的担当类：
  网上有两种的做法，第一个是将View类从Activtiy从抽离出来，独立做出一个View层。第二个是直接将Activity作为View层，在它之下产生一个Presenter层。
 
