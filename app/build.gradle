@@ -4,7 +4,7 @@ android {
     compileSdkVersion 22
     buildToolsVersion '22.0.1'
     defaultConfig {
-        applicationId "com.hugo.goopleplay"
+        applicationId 'com.hugo.amp'
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
@@ -16,8 +16,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    productFlavors {
-    }
+    productFlavors {}
 }
 
 dependencies {
