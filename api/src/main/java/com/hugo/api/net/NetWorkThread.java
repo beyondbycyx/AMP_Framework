@@ -59,7 +59,7 @@ public class NetWorkThread extends Thread {
           break;
         } catch (InterruptedException var4) {
           if (this.isQuited) {
-            return;
+            return; //结束线程
           }
         }
       }
